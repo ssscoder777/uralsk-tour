@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Туризм в Уральске — Главная</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<header>
+  <h1>Туризм в Уральске (Oral)</h1>
+  <nav>
+    <div>
+      <a href="index.html">Главная</a>
+      <a href="about.html">О городе</a>
+      <a href="places.html">Достопримечательности</a>
+      <a href="gallery.html">Галерея</a>
+      <a href="news.html">Новости</a>
+      <a href="forum.html">Форум</a>
+    </div>
+    <div>
+      <a href="login.html">Войти</a>
+      <a href="register.html">Регистрация</a>
+      <button onclick="document.body.classList.toggle('dark')">Тема</button>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="marquee">🌍 Уральск — старейший город региона, где Европа встречается с Азией.</div>
+
+  <div class="hero section">
+    <div style="max-width:640px">
+      <h2>Коротко о городе</h2>
+      <p>Уральск (Oral) — административный центр Западно-Казахстанской области. Город был основан как Яицкий острог в 1584 году и официально считается одним из старейших городов в современной территории Казахстана. Здесь переплетаются казахская и европейская культуры; в городе — старинные соборы, мечети, музеи и спокойная набережная реки Урал.</p>
+      <p class="muted">История: основан 1584, официальное оформление как город — 1613. Источники: справочная литература о г. Oral и региональных музеях. </p>
+    </div>
+    <img src="https://www.uralskweek.kz/wp-content/uploads/2023/02/Architekt_7.jpg" alt="Уральск">
+  </div>
+
+  <div class="section">
+    <h2>Популярные места</h2>
+    <table class="table">
+      <tr><th>Место</th><th>Почему стоит посетить</th></tr>
+      <tr><td>Кафедральный собор Архангела Михаила</td><td>Один из старейших сохранившихся православных храмов региона, интересен архитектурой и историей. </td></tr>
+      <tr><td>Западно-Казахстанский областной музей</td><td>Экспозиции по истории региона, Пугачёв и местная культура. </td></tr>
+      <tr><td>Набережная реки Урал</td><td>Прогулки, рыбалка, виды и отдых на природе.</td></tr>
+      <tr><td>Площадь Абая и городской центр</td><td>Культурные события, кафе и прогулки.</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Фото — галерея</h2>
+    <div class="gallery">
+      <img src="https://cdn.nur.kz/images/1120/a4bf869125361820.jpeg" alt="Набережная Урал">
+      <img src="https://kazislam.kz/wp-content/uploads/2023/07/oral-meshiti.jpg" alt="Мечеть">
+      <img src="https://avatars.mds.yandex.net/i?id=8650c8fa4ec6bd80cc53d592e40b699e_l-4599703-images-thumbs&n=13" alt="Улицы города">
+    </div>
+    <p class="muted">Источник изображений: локальные сайты и публичные ресурсы.</p>
+  </div>
+
+  <div class="section">
+    <h2>Мини-карта</h2>
+    <iframe src="https://www.google.com/maps?q=Uralsk,Kazakhstan&output=embed" width="100%" height="360" style="border:0;border-radius:8px;"></iframe>
+  </div>
+
+  <div class="section">
+    <h2>Новости (локальная подборка)</h2>
+    <div id="newsBox"></div>
+  </div>
+
+  <div class="section">
+    <h2>Профиль</h2>
+    <div id="profileBox"></div>
+  </div>
+</div>
+<div class="media">
+      <h3>🎧 Орал әнұраны</h3>
+      <audio controls>
+        <source src="https://mediastar.kz/userfiles/songs/oralym_asyl_qalam__erkin_otegenov.mp3" type="audio/mpeg">
+              </audio>
+
+      <h3>🎥 Орал қаласының жоғарыдан көрінісі</h3>
+       <iframe width="1260" height="500" src="https://www.youtube.com/embed/WJIz73X6_FA?si=PITNOtJlBOQkYcHr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    
+</div>
+
+
+<div class="footer">
+  © 2025 Туризм в Уральске</div>
+
+<script>
+renderNews('newsBox');
+renderProfileBox('profileBox');
+</script>
+</body>
+</html>
