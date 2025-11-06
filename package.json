@@ -2,8 +2,8 @@
   "name": "uralsk-tour",
   "version": "1.0.0",
   "main": "server/server.js",
-  "scripts": {
-    "start": "node server/server.js"
+  "start": "npm rebuild sqlite3 && node server/server.js"
+
   },
   "dependencies": {
     "cors": "^2.8.5",
