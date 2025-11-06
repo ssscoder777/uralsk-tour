@@ -6,23 +6,30 @@ const { registerUser, confirmEmail, loginUser } = require('./auth');
 const db = require('./db');
 
 const app = express();
+
+// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../public')));
 
+// Routes
 app.post('/api/register', (req, res) => {
-  const { name, email, password } = req.body;
-  res.json(registerUser(name, email, password));
+    const { name, email, password } = req.body;
+    res.json(registerUser(name, email, password));
 });
 
 app.post('/api/login', (req, res) => {
-  const { email, password } = req.body;
-  res.json(loginUser(email, password));
+    const { email, password } = req.body;
+    res.json(loginUser(email, password));
 });
 
 app.get('/confirm', (req, res) => {
-  const result = confirmEmail(req.query.token);
-  res.send(result.ok ? 'Email подтверждён!' : 'Ошибка подтверждения');
+    const result = confirmEmail(req.query.token);
+    res.send(result.ok ? 'Email подтверждён!' : 'Ошибка подтверждения');
 });
 
-app.listen(3000, () => console.log('Сервер запущен на http://localhost:3000'));
+// ✅ Важно: слушать PORT от Railway
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Сервер запущен на http://localhost:${PORT}`);
+});
