@@ -27,7 +27,7 @@ header{
 }
 header h1{margin:0;font-size:20px;}
 nav a{
-  color:#fff;
+  color:#f1f1f1;
   text-decoration:none;
   margin:0 8px;
   font-weight:600;
@@ -65,4 +65,30 @@ small.muted{color:#6b7b8c;}
   .hero{flex-direction:column}
   .card{width:100%}
   .gallery img{width:100%;height:200px}
+}
+.site-footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.site-footer a {
+  color: #1abc9c;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-content p {
+  margin: 6px 0;
+}
+@media (max-width: 768px) {
+  .site-footer {
+    font-size: 13px;
+    padding: 15px;
+  }
 }

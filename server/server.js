@@ -1,3 +1,5 @@
+const { sendCode } = require('./mailer');
+const { verifyCode } = require('./confirm');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -32,4 +34,22 @@ app.get('/confirm', (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Сервер запущен на http://localhost:${PORT}`);
+});
+app.post('/api/send-code', async (req, res) => {
+    const { email } = req.body;
+    try {
+        await sendCode(email);
+        res.send('Код отправлен на почту');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Ошибка при отправке письма');
+    }
+});
+app.post('/api/verify-code', (req, res) => {
+    const { email, code } = req.body;
+    verifyCode(email, code, (err, valid) => {
+        if (err) return res.status(500).send('Ошибка');
+        if (valid) return res.send('Код подтверждён');
+        res.status(400).send('Неверный код');
+    });
 });
